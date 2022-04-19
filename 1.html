@@ -24,9 +24,9 @@
   <script>
     "use strict";
 
-    const c = prompt('Введите температуру в градусах Цельсия');
-    const f = (9 / 5) * c;
-    alert(`Цельсий: ${c}, Фаренгейт: ${f}`);
+    const celsius = +prompt('Введите температуру в градусах Цельсия');
+    const fahrenheit = (9 / 5) * celsius + 32;
+    alert(`Цельсий: ${Math.round(celsius)}, Фаренгейт: ${fahrenheit.toFixed(2)}`);
   </script>
 </body>
 
