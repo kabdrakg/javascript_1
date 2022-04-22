@@ -36,7 +36,6 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
      * @return {string} returning one of the three declination words for number 
      */
     function declinationOfNumber(count, firstWord, secondWord, thirdWord) {
-      console.log(count);
       const count10 = count % 10;
       const count100 = count % 100;
       if (count100 >= 5 && count100 <= 20) {
@@ -48,7 +47,6 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
       } else {
         return thirdWord;
       }
-
     }
 
     // Число яблок, можно пробовать поставить свое целое, положительное число.

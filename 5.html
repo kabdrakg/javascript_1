@@ -39,8 +39,10 @@ Infinity делать не нужно, однако, в случае если б
      * Mathmatic operations with oun functions
      * @param {number} arg1 - First number
      * @param {number} arg2 - Second number
-     * @param {string} operation - type of math operation. Can be "+", "-", "/", "*".
-     * @return {number} result of operation of two numbers - arg1, arg2. Can return NaN, if set unknown operation
+     * @param {string} operation - type of math operation. 
+     * Can be "+", "-", "/", "*".
+     * @return {number} result of operation of two numbers - arg1, arg2. 
+     * Can return NaN, if set unknown operation
      */
     function mathOperation(arg1, arg2, operation) {
       switch (operation) {
@@ -71,9 +73,8 @@ Infinity делать не нужно, однако, в случае если б
     function difference(number1, number2) {
       if (number1 > number2) {
         return number1 - number2;
-      } else {
-        return number2 - number1;
       }
+      return number2 - number1;
     }
 
     /**
