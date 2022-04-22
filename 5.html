@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    console.log(mathOperation(10, 5, "+"));
+    /**
+     * Mathmatic operations with oun functions
+     * @param {number} arg1 - First number
+     * @param {number} arg2 - Second number
+     * @param {string} operation - type of math operation. 
+     * Can be "+", "-", "/", "*".
+     * @return {number} result of operation of two numbers - arg1, arg2. 
+     * Can return NaN, if set unknown operation
+     */
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case "+": return sum(arg1, arg2);
+        case "-": return difference(arg1, arg2);
+        case "/": return division(arg1, arg2);
+        case "*": return multiplication(arg1, arg2);
+        default: return NaN;
+      }
+    }
+
+    /**
+   * Addition of two numbers
+   * @param {number} number1 - First number
+   * @param {number} number2 - Second number
+   * @return {number} Sum of numbers
+   */
+    function sum(number1, number2) {
+      return number1 + number2;
+    }
+
+    /**
+     * Subtraction of two numbers
+     * @param {number} number1 - First number
+     * @param {number} number2 - Second number
+     * @return {number} Difference of numbers
+     */
+    function difference(number1, number2) {
+      if (number1 > number2) {
+        return number1 - number2;
+      }
+      return number2 - number1;
+    }
+
+    /**
+     * Multiplication of two numbers
+     * @param {number} number1 - First number
+     * @param {number} number2 - Second number
+     * @return {number} Product of numbers
+     */
+    function multiplication(number1, number2) {
+      return number1 * number2;
+    }
+
+    /**
+     * Division of two numbers
+     * @param {number} number1 - First number
+     * @param {number} number2 - Second number
+     * @return {number} Quotient of numbers
+     */
+    function division(number1, number2) {
+      return number1 / number2;
+    }
+  </script>
+</body>
+
+</html>
