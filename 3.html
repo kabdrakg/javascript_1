@@ -31,9 +31,9 @@
       },
     ];
 
-    products.forEach(function (product) {
-      product.price -= product.price * 0.15;
-    })
+    products.forEach(product =>
+      product.price -= product.price * 0.15
+    );
     console.log(products);
   </script>
 </body>
