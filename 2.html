@@ -52,17 +52,55 @@
   <script>
     "use strict";
 
-    function PostES5(authorName, text, dateTime) {
+    function PostES5(authorName, text) {
       this.authorName = authorName;
       this.text = text;
-      this.dateTime = dateTime;
+      this.dateTime = new Date();
     }
 
     PostES5.prototype.edit = function (newText) {
       this.text = newText;
+      this.dateTime = new Date();
     }
 
+    function AttachedPostES5(authorName, text) {
+      PostES5.call(this, authorName, text);
+      this.highlighted = false;
     }
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+    }
+
+    /////////////////////////////////// ES6 
+    class PostES6 {
+      constructor(authorName, text) {
+        this.authorName = authorName;
+        this.text = text;
+        this.dateTime = new Date();
+      }
+
+      edit(newText) {
+        this.text = newText;
+        this.dateTime = new Date();
+      }
+    }
+
+    class AttachedPostES6 extends PostES6 {
+      constructor(authorName, text) {
+        super(authorName, text);
+        this.highlighted = false;
+      }
+
+      makeTextHighlighted() {
+        this.highlighted = true;
+      }
+    }
+
+
   </script>
 </body>
 
